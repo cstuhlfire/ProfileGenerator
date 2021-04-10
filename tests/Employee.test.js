@@ -42,7 +42,7 @@ describe("Employee", () => {
     });
   });
 
-  // Test that .getName() method returns name
+  // Test that getName() method returns name
   describe("getName", () => {
     it("should return the current name", () => {
         const testName = "Mango";
@@ -55,7 +55,7 @@ describe("Employee", () => {
     });
   });
 
-  // Test that .getId() method returns id
+  // Test that getId() method returns id
   describe("getId", () => {
     it("should return the current id", () => {
         const testName = "Mango";
@@ -68,7 +68,7 @@ describe("Employee", () => {
     });
   });
 
-  // Test that .getEmail() method returns the employee email
+  // Test that getEmail() method returns the employee email
   describe("getEmail", () => {
     it("should return the current email", () => {
         const testName = "Mango";
@@ -81,7 +81,7 @@ describe("Employee", () => {
     });
   });
 
-  // Test that .getRole() method returns "Employee"
+  // Test that getRole() method returns "Employee"
   describe("getRole", () => {
     it("should return 'Employee'", () => {
         const testName = "Mango";

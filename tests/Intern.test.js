@@ -17,7 +17,7 @@ describe("Intern", () => {
     });
   });
 
-  // Test that .getSchool() method returns school.
+  // Test that getSchool() method returns school.
   describe("getSchool", () => {
     it("should return intern's school name", () => {
       const testName = "Mango";
@@ -31,7 +31,7 @@ describe("Intern", () => {
     });
   });
 
-  // Test that .getRole() method returns "Intern".
+  // Test that getRole() method returns "Intern".
   describe("getRole", () => {
     it("should return 'Intern", () => {
       const testName = "Mango";

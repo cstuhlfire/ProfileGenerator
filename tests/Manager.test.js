@@ -17,7 +17,7 @@ describe("Manager", () => {
     });
   });
 
-  // Test that .getRole() method returns "Manager".
+  // Test that getRole() method returns "Manager".
   describe("getRole", () => {
     it("should return 'Manager", () => {
       const testName = "Mango";
