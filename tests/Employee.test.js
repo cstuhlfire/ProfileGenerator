@@ -69,7 +69,7 @@ describe("Employee", () => {
   });
 
   // Test that .getEmail() method returns the employee email
-  describe("getId", () => {
+  describe("getEmail", () => {
     it("should return the current email", () => {
         const testName = "Mango";
         const testId = "2312";
@@ -82,7 +82,7 @@ describe("Employee", () => {
   });
 
   // Test that .getRole() method returns "Employee"
-  describe("getId", () => {
+  describe("getRole", () => {
     it("should return 'Employee'", () => {
         const testName = "Mango";
         const testId = "2312";
