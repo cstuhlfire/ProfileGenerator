@@ -33,8 +33,23 @@ describe("Engineer", () => {
     });
   });
 
-  // Test that .getRole() method returns "Engineer".
-  describe("getRole", () => {
+  // Test that getGithub() method returns "Engineer".
+  describe("getGithub()", () => {
+    it("should return github repo", () => {
+      const testName = "Mango";
+      const testId = "2312";
+      const testEmail = "mango@gmail.com";
+      const testGithubName = "MangoCodes";
+      const testGithubRepo = "https://github.com/mango"
+
+      const testEngineer = new Engineer(testName, testId, testEmail, testGithubName, testGithubRepo);
+
+      expect(testEngineer.getGithub()).toEqual(testGithubRepo);
+    });
+  });
+
+  // Test that getRole() method returns "Engineer".
+  describe("getRole()", () => {
     it("should return 'Engineer", () => {
       const testName = "Mango";
       const testId = "2312";
