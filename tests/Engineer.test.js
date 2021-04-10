@@ -1,6 +1,6 @@
 const Engineer = require("../lib/Engineer");
 
-// Test Employee class constructor and methods
+// Test Engineer class constructor and methods
 describe("Engineer", () => {
 
   // Test that entered github username is stored in object.githubName.
@@ -47,8 +47,4 @@ describe("Engineer", () => {
       expect(testEngineer.getRole()).toEqual("Engineer");
     });
   });
-
-
-  
-//   getRole()—overridden to return 'Engineer'
 });
