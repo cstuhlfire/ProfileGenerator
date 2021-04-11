@@ -1,10 +1,10 @@
 // Create question arrays
-// Create managerQuestionArray
+// Create manager question array
 managerQuestionArray = [
   {
     type: "input",
     name: "name",
-    message: "Enter the team manager's name: ",
+    message: "Enter the manager's name: ",
   },
   {
     type: "input",

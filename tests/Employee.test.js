@@ -45,11 +45,11 @@ describe("Employee", () => {
   // Test that getName() method returns name
   describe("getName", () => {
     it("should return the current name", () => {
-        const testName = "Mango";
-        const testId = "2312";
-        const testEmail = "mango@gmail.com";
+      const testName = "Mango";
+      const testId = "2312";
+      const testEmail = "mango@gmail.com";
 
-        const testEmployee = new Employee(testName, testId, testEmail);
+      const testEmployee = new Employee(testName, testId, testEmail);
 
         expect(testEmployee.getName()).toEqual(testName);
     });
@@ -58,11 +58,11 @@ describe("Employee", () => {
   // Test that getId() method returns id
   describe("getId", () => {
     it("should return the current id", () => {
-        const testName = "Mango";
-        const testId = "2312";
-        const testEmail = "mango@gmail.com";
+      const testName = "Mango";
+      const testId = "2312";
+      const testEmail = "mango@gmail.com";
 
-        const testEmployee = new Employee(testName, testId, testEmail);
+      const testEmployee = new Employee(testName, testId, testEmail);
 
         expect(testEmployee.getId()).toEqual(testId);
     });
@@ -71,11 +71,11 @@ describe("Employee", () => {
   // Test that getEmail() method returns the employee email
   describe("getEmail", () => {
     it("should return the current email", () => {
-        const testName = "Mango";
-        const testId = "2312";
-        const testEmail = "mango@gmail.com";
+      const testName = "Mango";
+      const testId = "2312";
+      const testEmail = "mango@gmail.com";
 
-        const testEmployee = new Employee(testName, testId, testEmail);
+      const testEmployee = new Employee(testName, testId, testEmail);
 
         expect(testEmployee.getEmail()).toEqual(testEmail);
     });

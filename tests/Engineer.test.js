@@ -10,41 +10,24 @@ describe("Engineer", () => {
       const testId = "2312";
       const testEmail = "mango@gmail.com";
       const testGithubName = "MangoCodes";
-      const testGithubRepo = "https://github.com/mango"
 
-      const testEngineer = new Engineer(testName, testId, testEmail, testGithubName, testGithubRepo);
+      const testEngineer = new Engineer(testName, testId, testEmail, testGithubName);
 
       expect(testEngineer.githubName).toEqual(testGithubName);
     });
   });
 
-  // Test that entered github repo is stored in object.githubRepo.
-  describe("github repo", () => {
-    it("should store an input testGithubRepo in testEngineer.githubRepo", () => {
-      const testName = "Mango";
-      const testId = "2312";
-      const testEmail = "mango@gmail.com";
-      const testGithubName = "MangoCodes";
-      const testGithubRepo = "https://github.com/mango"
-
-      const testEngineer = new Engineer(testName, testId, testEmail, testGithubName, testGithubRepo);
-
-      expect(testEngineer.githubRepo).toEqual(testGithubRepo);
-    });
-  });
-
   // Test that getGithub() method returns "Engineer".
   describe("getGithub()", () => {
-    it("should return github repo", () => {
+    it("should return github", () => {
       const testName = "Mango";
       const testId = "2312";
       const testEmail = "mango@gmail.com";
       const testGithubName = "MangoCodes";
-      const testGithubRepo = "https://github.com/mango"
 
-      const testEngineer = new Engineer(testName, testId, testEmail, testGithubName, testGithubRepo);
+      const testEngineer = new Engineer(testName, testId, testEmail, testGithubName);
 
-      expect(testEngineer.getGithub()).toEqual(testGithubRepo);
+      expect(testEngineer.getGithub()).toEqual(testGithubName);
     });
   });
 
@@ -55,9 +38,8 @@ describe("Engineer", () => {
       const testId = "2312";
       const testEmail = "mango@gmail.com";
       const testGithubName = "MangoCodes";
-      const testGithubRepo = "https://github.com/mango"
 
-      const testEngineer = new Engineer(testName, testId, testEmail, testGithubName, testGithubRepo);
+      const testEngineer = new Engineer(testName, testId, testEmail, testGithubName);
 
       expect(testEngineer.getRole()).toEqual("Engineer");
     });
