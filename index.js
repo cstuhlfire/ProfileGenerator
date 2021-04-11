@@ -45,17 +45,19 @@ function displayMenu() {
   });
 }
 
+// Build team by prompting for new engineers and interns.
+// Write to html file as each new instance is created.
 function buildTeam(response) {
   if (response.add === "Engineer") {
     // Prompt with engineer questions
     inquirer.prompt(arr.engineerArray).then((data) => {
-      console.log(data);
-      displayMenu();
+        const engineer = new Engineer(data.name, data.id, data.email, data.githubName);
+        displayMenu();
     });
   } else if (response.add === "Intern") {
     // Prompt with intern questions
     inquirer.prompt(arr.internArray).then((data) => {
-      console.log(data);
+        const intern = new Intern(data.name, data.id, data.email, data.school);
       displayMenu();
     });
   } else {
