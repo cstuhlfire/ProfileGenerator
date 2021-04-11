@@ -22,6 +22,7 @@ function promptManagerInfo() {
   inquirer.prompt(arr.managerQuestionArray).then((data) => {
     // Create new manager
     const manager = new Manager(data.name, data.id, data.email, data.number, data.teamName);
+    manager.getRole();
     console.log(`\n${manager.teamName}`);
     console.log(`Manager: ${manager.getName()}`);
 
@@ -47,6 +48,7 @@ function buildTeam(response, manager) {
     // Prompt with engineer questions
     inquirer.prompt(arr.engineerArray).then((data) => {
       const engineer = new Engineer(data.name, data.id, data.email, data.githubName);
+      engineer.getRole();
       newEngineerArray.push(engineer);
       displayMenu(manager);
     });
@@ -54,6 +56,7 @@ function buildTeam(response, manager) {
     // Prompt with intern questions
     inquirer.prompt(arr.internArray).then((data) => {
       const intern = new Intern(data.name, data.id, data.email, data.school);
+      intern.getRole();
       newInternArray.push(intern);
       displayMenu(manager);
     });

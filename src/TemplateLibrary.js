@@ -20,36 +20,9 @@ const heroOpen = `  <section class="hero is-danger">
 const heroClose = `</p>          
     </div>
   </section>`;
-const boxOpen = `  <div class="box p-6">`;
-const rowOpen = `   <div class="tile is-ancestor">`;
+const boxOpen = `   <div class="box p-6">`;
+const rowOpen = `     <div class="tile is-ancestor">`;
 const divClose = `</div>`;
-
-const cardOpen = `  
-<div class="tile is-parent is-3">
-    <article class="tile is-child box">
-    
-    <div class="card">
-        <header class="card-header has-background-link has-text-white-ter is-size-5">
-            <span class="icon is-size-5 pl-5 pt-6 pb-6 pr-4">`;
-
-const cardClose = `
-                <i class="fas fa-coffee has-text-white-ter" aria-hidden="true"></i>
-            </span>
-            <p class="card-header-title has-text-white-ter ">Mango Mangleton</p>
-        </header>
-
-        <div class="card-content">
-            <div class="content">
-                <p class="subtitle">Manager</p>
-                <p>ID: 1234</p>
-                <p>Email: <a href="#">mango@mango.mango</a></p>
-                <p>Office ID: 7</p>
-            </div>
-        </div>
-    </div>
-
-    </article>
-</div>`;
 
 module.exports = {htmlOpen,
     htmlClose,
@@ -59,6 +32,4 @@ module.exports = {htmlOpen,
     heroClose,
     boxOpen,
     rowOpen,
-    divClose,
-    cardOpen,
-    cardClose};
+    divClose};
