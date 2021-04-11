@@ -3,6 +3,11 @@
 managerQuestionArray = [
   {
     type: "input",
+    name: "teamName",
+    message: "Enter the team name: ",
+  },
+  {
+    type: "input",
     name: "name",
     message: "Enter the manager's name: ",
   },

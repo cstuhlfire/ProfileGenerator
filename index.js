@@ -9,6 +9,10 @@ const Engineer = require("./lib/Engineer");
 const Manager = require("./lib/Manager");
 const Intern = require("./lib/Intern");
 
+// Define new employee arrays;
+let newEngineerArray = [];
+let newInternArray = [];
+
 // Function call to start application and prompt user for manager information
 promptManagerInfo();
 
@@ -17,42 +21,45 @@ function promptManagerInfo() {
   // Prompt user with questions array
   inquirer.prompt(arr.managerQuestionArray).then((data) => {
     // Create new manager
-    const manager = new Manager(data.name, data.id, data.email, data.number);
+    const manager = new Manager(data.name, data.id, data.email, data.number, data.teamName);
+    console.log(`\n${manager.teamName}`);
     console.log(`Manager: ${manager.getName()}`);
 
     // Display menu to add team members
-    displayMenu();
+    displayMenu(manager);
   });
 }
 
 // Display menu
-function displayMenu() {
+function displayMenu(manager) {
   console.log("-----------------\n");
 
   // Display menu
   inquirer.prompt(arr.menuArray).then((response) => {
-    buildTeam(response);
+    buildTeam(response, manager);
   });
 }
 
 // Build team by prompting for new engineers and interns.
 // Write to html file as each new instance is created.
-function buildTeam(response) {
+function buildTeam(response, manager) {
   if (response.add === "Engineer") {
     // Prompt with engineer questions
     inquirer.prompt(arr.engineerArray).then((data) => {
       const engineer = new Engineer(data.name, data.id, data.email, data.githubName);
-      displayMenu();
+      newEngineerArray.push(engineer);
+      displayMenu(manager);
     });
   } else if (response.add === "Intern") {
     // Prompt with intern questions
     inquirer.prompt(arr.internArray).then((data) => {
       const intern = new Intern(data.name, data.id, data.email, data.school);
-      displayMenu();
+      newInternArray.push(intern);
+      displayMenu(manager);
     });
   } else {
     // Stop prompting for team members and write index.html file
-    let fileString = gen.generateHTML();
+    let fileString = gen.generateHTML(manager, newEngineerArray, newInternArray);
     writeToFile(fileString);
   }
 }
