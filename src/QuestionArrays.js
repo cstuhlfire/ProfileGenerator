@@ -1,9 +1,10 @@
+// Create question arrays
 // Create managerQuestionArray
 managerQuestionArray = [
   {
     type: "input",
     name: "name",
-    message: "Enter the Team Manager's name: ",
+    message: "Enter the team manager's name: ",
   },
   {
     type: "input",
@@ -26,11 +27,61 @@ managerQuestionArray = [
 menuArray = [
   {
     type: "list",
-    name: "menuChoice",
+    name: "add",
     message: "Would you like to add an: ",
     choices: ["Engineer", "Intern", "Finish"],
   },
 ];
 
+// Create engineerArray
+engineerArray = [
+    {
+      type: "input",
+      name: "name",
+      message: "Enter the engineer's name: ",
+    },
+    {
+      type: "input",
+      name: "id",
+      message: "Enter the employee ID: ",
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "Enter the email address: ",
+    },
+    {
+      type: "input",
+      name: "githubName",
+      message: "Enter the github name: ",
+    },
+  ];
+
+// Create internArray
+internArray = [
+    {
+      type: "input",
+      name: "name",
+      message: "Enter the intern's name: ",
+    },
+    {
+      type: "input",
+      name: "id",
+      message: "Enter the employee ID: ",
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "Enter the email address: ",
+    },
+    {
+      type: "input",
+      name: "school",
+      message: "Enter the intern's school: ",
+    },
+  ];
+
 module.exports = {managerQuestionArray,
-                menuArray};
+                menuArray, 
+                engineerArray,
+                internArray};

@@ -1,4 +1,6 @@
 // Team Profile Generator
+// Define globals
+let finishedBuildlingTeam = false;
 
 // Include packages needed for this application
 const inquirer = require("inquirer");
@@ -17,55 +19,63 @@ init();
 
 // Function definitions
 function init() {
-    promptManagerInfo(arr.managerQuestionArray);
+  promptManagerInfo(arr.managerQuestionArray);
 }
 
 // Prompt for manager information
 function promptManagerInfo(questions) {
-    // Prompt user with questions array
-    inquirer.prompt(questions)
-        .then((data) => {
-            // Create manager
-            const manager = new Manager(data.name, data.id, data.email, data.number);
-            
-            // Build team
-            buildTeam(manager);
-            });
+  // Prompt user with questions array
+  inquirer.prompt(questions).then((data) => {
+    // Create new manager
+    const manager = new Manager(data.name, data.id, data.email, data.number);
+    console.log(`Manager: ${manager.getName()}`);
+
+    // Display menu to add team members
+    displayMenu();
+  });
 }
 
 // Display menu
-function displayMenu(menu) {
-    console.log("here");
-    // Prompt user with options from the menuArray
-    inquirer.prompt(menu)
-        .then((data) => {
-            console.log(data);
-            });
+function displayMenu() {
+  console.log("-----------------\n");
+
+  // Display menu
+  inquirer.prompt(arr.menuArray).then((response) => {
+    buildTeam(response);
+  });
 }
 
-function buildTeam(manager){
-    let finishedBuildlingTeam = false;
-
-    console.log(`Manager is: ${manager.getName()}`);
-    
-    // while not finished building team
-    displayMenu(arr.menuArray);
-    //while(!finishedBuildlingTeam)
-        // display menu
-
-       // finishedBuildingTeam = true;
-            // if engineer
-                // prompt for engineer github details
-                // create new engineer
-                // push new engineer onto engineer array
-            // if intern
-                //prompt for intern details
-                // create new intern
-                // push new intern onto intern array
-            // if finished building team
-                // set finished = true (break out of while loop)
-    
-
-    // call function to build html string with (manager, engineerArray, internArray)
+function buildTeam(response) {
+  if (response.add === "Engineer") {
+    // Prompt with engineer questions
+    inquirer.prompt(arr.engineerArray).then((data) => {
+      console.log(data);
+      displayMenu();
+    });
+  } else if (response.add === "Intern") {
+    // Prompt with intern questions
+    inquirer.prompt(arr.internArray).then((data) => {
+      console.log(data);
+      displayMenu();
+    });
+  } else {
+    // Stop prompting for team members
+    console.log("Finish");
+  }
 }
 
+// display menu
+// if engineer
+// prompt for engineer github details
+// create new engineer
+// push new engineer onto engineer array
+// display menu
+// if intern
+//prompt for intern details
+// create new intern
+// push new intern onto intern array
+// display menu
+// if finished building team
+// finish
+
+// call function to build html string with (manager, engineerArray, internArray)
