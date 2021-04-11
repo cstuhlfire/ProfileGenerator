@@ -37,20 +37,26 @@ function addRows(manager, engineers, interns){
     // If there are no employees to add, close the div
     if (cardCount === totalCards){
         rowString += `${lib.divClose}
-        `;
+`;
         rowCounter = 0;
-    // Else add employees
-    } else {
+    // Else if there are engineers, add them
+    } else if (engineers.length > 0){
+        for (let i = 0; i < engineers.length; i++) {
+            // Add manager    
+            rowString += addEmployee(rowCounter, engineers[i], engineerIcon, engineers[i].githubName);
+            cardCount++;
+            rowCounter++;
 
-        // If there are 4 in the row then close row and reset cardCount
-        // If there are no more employees to add close row
-        if (rowCounter === 4 || cardCount === totalCards){
-            rowString += `${lib.divClose}
-            `;
-            rowCounter = 0;
+            // If there are 4 in the row then close row and reset cardCount
+            // If there are no more employees to add close row
+            if (rowCounter === 4 || cardCount === totalCards){
+                rowString += `${lib.divClose}
+`;
+                rowCounter = 0;
+            }
         }
     }
-    
+
     return rowString;
 }
 
@@ -61,7 +67,7 @@ function addEmployee(count, employee, icon, special){
     // If count === 0 it's the first card in a new row so create a new row
     if (count === 0){
         empString = `${lib.rowOpen}
-        `;
+`;
     }
     
     // Test role to use specific title for role specific data
