@@ -3,7 +3,7 @@ const lib = require("./TemplateLibrary");
 
 const managerIcon = "fas fa-coffee";
 const engineerIcon = "fas fa-calculator";
-const interIcon = "fas fa-graduation-cap";
+const internIcon = "fas fa-graduation-cap";
 
 // Functions to Generate html
 function generateHTML(manager, newEngineerArray, newInternArray){
@@ -38,12 +38,31 @@ function addRows(manager, engineers, interns){
     if (cardCount === totalCards){
         rowString += `${lib.divClose}
 `;
-        rowCounter = 0;
-    // Else if there are engineers, add them
-    } else if (engineers.length > 0){
+        return rowString;
+    }
+
+    // If there are engineers, add them
+    if (engineers.length > 0){
         for (let i = 0; i < engineers.length; i++) {
             // Add manager    
             rowString += addEmployee(rowCounter, engineers[i], engineerIcon, engineers[i].githubName);
+            cardCount++;
+            rowCounter++;
+
+            // If there are 4 in the row then close row and reset cardCount
+            // If there are no more employees to add close row
+            if (rowCounter === 4 || cardCount === totalCards){
+                rowString += `${lib.divClose}
+`;
+                rowCounter = 0;
+            }
+        }
+    }
+    // If there are interns, add them
+    if (interns.length > 0){
+        for (let i = 0; i < interns.length; i++) {
+            // Add manager    
+            rowString += addEmployee(rowCounter, interns[i], internIcon, interns[i].school);
             cardCount++;
             rowCounter++;
 
@@ -69,14 +88,14 @@ function addEmployee(count, employee, icon, special){
         empString = `${lib.rowOpen}
 `;
     }
-    
+
     // Test role to use specific title for role specific data
     if (employee.role === "Manager"){
         specialPrompt = `Office ID: ${special}`;
     } else if (employee.role === "Engineer"){
         specialPrompt = `Github: <a href="#">${special}</a>`;
     } else if (employee.role === "Intern"){
-        speicalPrompt = `School: ${special}`;
+        specialPrompt = `School: ${special}`;
     }
     
     // Modify employee specific details
