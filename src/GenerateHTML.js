@@ -28,7 +28,6 @@ function addRows(manager, engineers, interns){
     let rowCounter = 0;
     let totalCards = 1 + engineers.length + interns.length;
 
-    console.log(totalCards);
     // Add manager    
     rowString += addEmployee(rowCounter, manager, managerIcon, manager.officeNumber);
     cardCount++;
