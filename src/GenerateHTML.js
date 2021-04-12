@@ -91,9 +91,9 @@ function addEmployee(count, employee, icon, special){
 
     // Test role to use specific title for role specific data
     if (employee.role === "Manager"){
-        specialPrompt = `Office ID: ${special}`;
+        specialPrompt = `Office Number: ${special}`;
     } else if (employee.role === "Engineer"){
-        specialPrompt = `Github: <a href="#">${special}</a>`;
+        specialPrompt = `Github: <a href="https://github.com/${special}" target="_blank">${special}</a>`;
     } else if (employee.role === "Intern"){
         specialPrompt = `School: ${special}`;
     }
@@ -114,7 +114,7 @@ function addEmployee(count, employee, icon, special){
             <div class="content">
                 <p class="subtitle">${employee.role}</p>
                 <p>ID: ${employee.id}</p>
-                <p>Email: <a href="#">${employee.email}</a></p>
+                <p>Email: <a href="mailto:${employee.email}">${employee.email}</a></p>
                 <p>${specialPrompt}</p>
             </div>
         </div>

@@ -76,18 +76,19 @@ function writeToFile(fileString) {
   );
 }
 
-// display menu
-// if engineer
-  // prompt for engineer github details
-  // create new engineer
-  // push new engineer onto engineer array
+// prompt manager data
   // display menu
-// if intern
-  // prompt for intern details
-  // create new intern
-  // push new intern onto intern array
-  // display menu
-// if finished building team
-  // finish
-
-// call function to build html string with (manager, engineerArray, internArray)
+    // if engineer
+      // prompt for engineer with github details (engineerArray - questions)
+      // create new engineer
+      // engineer.getRole() to set role
+      // push new engineer onto newEngineerArray
+      // display menu
+    // if intern
+      // prompt for intern details (internArray - questions)
+      // create new intern
+      // intern.getRole() to set role
+      // push new intern onto newInternArray
+      // display menu
+    // if finished building team
+      // call function to build html string with (manager, newEngineerArray, newInternArray)
